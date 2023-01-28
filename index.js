@@ -23,7 +23,7 @@ const dht = require('./routes/dht.routes')
 const auth = require('./routes/auth.routes')
 const room = require('./routes/room.routes')
 const pin = require('./routes/pin.routes')
-const api = require('./api')
+const socket_api = require('./socketRoutes/test.routes')
 
 app.use((req, res, next) => {
     req.io = io;
@@ -36,7 +36,7 @@ app.use('/dht', dht)
 app.use('/auth', auth)
 app.use('/room', room)
 app.use('/pin', pin)
-app.use('/api', api);
+app.use('/api', socket_api);
 
 server.listen(port, () => {
     console.log(`listen to PORT : ${port}`);
