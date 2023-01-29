@@ -15,7 +15,7 @@ exports.generate_token = (req, res) => {
                 pin: results[0].pincode,
             };
             const options = {
-                expiresIn: '180000'
+                expiresIn: '60000'
             };
             const token = jwt.sign(payload, process.env.TOKEN_KEY, options);
             console.log("True");
