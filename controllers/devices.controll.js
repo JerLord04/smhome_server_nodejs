@@ -3,7 +3,7 @@ const db = require('../database/connectDB');
 
 exports.insert_device = (req, res) => {
     const data = req.body;
-    console.log(data);
+    // console.log(data);
     const sql = `INSERT INTO devices( id_room, id_sensor) VALUES (${data.room_id},${data.sensor_id})`;
     db.connect(function (err) {
         db.query(sql, function (err, result, fields) {
@@ -11,7 +11,7 @@ exports.insert_device = (req, res) => {
                 res.send(err);
                 throw err;
             }
-            console.log(result);
+            // console.log(result);
             data_res = {
                 'status': true,
                 'msg': 'Device added successfully'
@@ -21,6 +21,8 @@ exports.insert_device = (req, res) => {
         });
     });
 };
+
+
 
 exports.delete_device = (req, res) => {
     const data = req.body;
