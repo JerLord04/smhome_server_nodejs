@@ -7,6 +7,8 @@ exports.insertHandT = (req,res) => {
     const params = [data.humi,data.temp];
     db.query(sql, params, (error, results, fields) => {
         if (error) throw error;
+        console.log("Humidity : " + data.humi + " %");
+        console.log( "Temperaty : " +  data.temp + " c");
         console.log('Successfully inserted current datetime value into the database');
         res.send("Completed")
       });
