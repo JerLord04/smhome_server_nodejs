@@ -25,3 +25,12 @@ exports.getHTvalue = (req,res) => {
     });
 }
 
+exports.getLatesHumidityAndTemperature = (req,res) => {
+    const sql = 'SELECT hvalue,tvalue FROM ht_table ORDER BY id DESC LIMIT 1';
+    db.query(sql,(error,result,fields) => {
+        if(error) throw error;
+        console.log(result);
+        res.send(result)
+    })
+}
+

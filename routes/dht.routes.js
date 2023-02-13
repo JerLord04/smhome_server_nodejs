@@ -9,6 +9,7 @@ const dhtController = require("../controllers/dht.controller");
 // router.get('/get_tem_data',dhtController.get_temperature_data);
 router.get('/get_t_h_value',dhtController.getHTvalue)
 router.get('/insertRoomID',dhtController.insertRoomInHTtable)
+router.get('/getLatestValue',dhtController.getLatesHumidityAndTemperature)
 
 
 
