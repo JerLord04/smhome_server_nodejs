@@ -8,7 +8,8 @@ const door_status = require("../socketsController/door_sensor_controller")
 const getHumiAndTempData = require("../socketsController/humi_and_temp.Controller")
 
 router.post('/socket_test',testSocket.testApi);
-router.get('/light_bulb_command',light_bulb_controller.light_bulb_command);
+router.get('/light_bulb_command_on',light_bulb_controller.light_bulb_command_on);
+router.get('/light_bulb_command_off',light_bulb_controller.light_bulb_command_off);
 router.get('/get_door_status',door_status.door_status);
 router.get('/humiAndTempData',getHumiAndTempData.insertHandT);
 

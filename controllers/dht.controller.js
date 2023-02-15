@@ -26,7 +26,8 @@ exports.getHTvalue = (req,res) => {
 }
 
 exports.getLatesHumidityAndTemperature = (req,res) => {
-    const sql = 'SELECT hvalue,tvalue FROM ht_table ORDER BY id DESC LIMIT 1';
+    const data = req.query
+    const sql = `SELECT hvalue,tvalue FROM ht_table WHERE room_id = ${data.room_id} ORDER BY id DESC LIMIT 1`;
     db.query(sql,(error,result,fields) => {
         if(error) throw error;
         console.log(result);
