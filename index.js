@@ -25,6 +25,7 @@ const room = require('./routes/room.routes')
 const pin = require('./routes/pin.routes')
 const socket_api = require('./socketRoutes/socket.routes')
 
+
 // const test_listen = require('./socketsController/testListenClient')
 
 app.use((req, res, next) => {
@@ -40,9 +41,7 @@ app.use('/room', room)
 app.use('/pin', pin)
 app.use('/api', socket_api);
 
-// io.on('connection',(socket) => {
-//     console.log("Socket client connected");
-// })
+
 
 server.listen(port, () => {
     console.log(`listen to PORT : ${port}`);

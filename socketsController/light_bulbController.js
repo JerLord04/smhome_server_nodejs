@@ -23,6 +23,7 @@ exports.light_bulb_command_on = (req, res) => {
 
 exports.light_bulb_command_off = (req, res) => {
     const data = req.query;
+    console.log(data.status);
     if (data.status === "light_bulb01") {
         req.io.emit(`light_bulb_control_l1`, ".Light OFF1");
     } else if (data.status === "light_bulb02") {
@@ -36,4 +37,5 @@ exports.light_bulb_command_off = (req, res) => {
         "Status": `Light bulb has been turned off`
     })
 }
+
 
