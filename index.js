@@ -33,6 +33,8 @@ app.use((req, res, next) => {
     return next();
 });
 
+
+//routing
 app.use('/', roomDevice);
 app.use('/devices', devices);
 app.use('/dht', dht)
